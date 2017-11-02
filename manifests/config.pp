@@ -26,7 +26,7 @@ class nginx::config (
 		recurse => true,
 		}
 
-	file { $doc_root :
+	file { $docroot :
 		ensure => directory,
 		recurse => true,
 		mode => $mode,
