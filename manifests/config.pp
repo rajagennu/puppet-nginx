@@ -21,12 +21,12 @@ class nginx::config (
 		}
 
 
-	file { $log_dir:
+	file { $log_dir :
 		ensure => directory,
 		recurse => true,
 		}
 
-	file { $doc_root:
+	file { $doc_root :
 		ensure => directory,
 		recurse => true,
 		mode => $mode,
