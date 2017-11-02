@@ -1,4 +1,4 @@
-define nginx::vhost(
+define nginx::vhosts(
 	Integer $port 	= 80 ,
 	String $priority	= '50',
 	String $server_aliases	= '',
