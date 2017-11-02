@@ -15,6 +15,7 @@ define nginx::vhost(
 
 
 	) {
+	$vhost_docroot = "${::nginx::docroot}/${name}"
 
 
 	file { "${vhost_dir}/${priority}-${name}.conf":
@@ -25,5 +26,16 @@ define nginx::vhost(
 		group => $group,
 		notify	=> Service['nginx_service'],
 	}
+
+	file { $vhost_docroot:
+		ensure => directory,
+		recurse => true,
+		mode => '0755',
+		owner => $owner,
+		group => $group,
+	}
+		
+
+
 
 }
